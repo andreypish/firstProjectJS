@@ -41,3 +41,15 @@ for (let i = 5; i < 11; i++) {
 }
 
 console.log(arrayOfNumbers);
+
+//Заполните новый массив (result) числами из старого (arr). Должен получиться точно такой же массив
+
+const arr = [3, 5, 8, 16, 20, 23, 50];
+const result = [];
+
+for (let i = 0; i < arr.length; i++) {
+    result[i] = arr[i];
+}
+
+console.log(result);
+
