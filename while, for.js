@@ -43,7 +43,6 @@ for (let i = 5; i < 11; i++) {
 console.log(arrayOfNumbers);
 
 //Заполните новый массив (result) числами из старого (arr). Должен получиться точно такой же массив
-
 const arr = [3, 5, 8, 16, 20, 23, 50];
 const result = [];
 
@@ -53,3 +52,14 @@ for (let i = 0; i < arr.length; i++) {
 
 console.log(result);
 
+//Измените данный массив так, чтобы все числа были увеличены в 2 раза, а если попадается строка строка - то к ней было добавлено " - done".
+const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+for (let i = 0; i < data.length; i++) {
+if (typeof(data[i]) === 'number') {
+    data[i] = data[i] * 2;
+} else if (typeof(data[i]) === 'string') {
+    data[i] = `${data[i]} - done`;}
+} 
+
+console.log(data);
