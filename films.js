@@ -1,4 +1,16 @@
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+
+/* 1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять. (К любой строке можно обратиться как 
+str.length - и получить её длину)
+
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка" */
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMuvieDB = {
     count: numberOfFilms,
@@ -8,13 +20,30 @@ const personalMuvieDB = {
     privat: false
 };
 
-const a = prompt('Один из последних фильмов?', ''),
-b = prompt('На сколько оцените его?', ),
-a1 = prompt('Один из последних фильмов?', ''),
-b1 = prompt('На сколько оцените его?', );
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
 
-personalMuvieDB.movies[a] = b;
-personalMuvieDB.movies[a1] = b1;
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMuvieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }     
+}
+
+if (personalMuvieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+} else if (personalMuvieDB.count >= 10 && personalMuvieDB.count <= 30) {
+    console.log('Вы классный зритель');
+} else if (personalMuvieDB.count >= 30) {
+    console.log('Вы киноман');
+} else {
+    console.log('Произошла ошибка');
+} 
 
 console.log(personalMuvieDB);
+
+
 
